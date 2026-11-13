@@ -23,5 +23,11 @@ class Disco:
         # Marcamos como ocupados los bloques seleccionados
         for posicion in disponibles:
             self._bloques[posicion] = True
-
+    
         return disponibles
+
+    def liberar_bloques(self, posiciones: list[int]) -> None:
+        # Recorremos los bloques que queremos liberar
+        for posicion in posiciones:
+            self._bloques[posicion] = False
+

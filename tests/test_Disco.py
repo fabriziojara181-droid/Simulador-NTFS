@@ -51,5 +51,16 @@ class TestDisco(unittest.TestCase):
         self.assertEqual(segunda_reserva, [2, 3])
         self.assertEqual(disco.bloques_disponibles(), 2)
 
+
+    def test_liberar_bloques_recupera_espacio_disponible(self):
+        disco = Disco(6)
+
+        bloques = disco.reservar_bloques(3)
+
+        disco.liberar_bloques(bloques)
+
+        self.assertEqual(disco.bloques_disponibles(), 6)
+
+
 if __name__ == "__main__":
     unittest.main()
